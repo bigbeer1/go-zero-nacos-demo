@@ -1,0 +1,260 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "sysUser"
+    }
+  ],
+  "paths": {
+    "/user/sysUser/{id}": {
+      "delete": {
+        "summary": "删除sysUser",
+        "x-apifox-folder": "sysUser",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "sysUser"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "用户ID",
+            "required": true,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+
+        },
+        "x-run-in-apifox": "",
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/user/sysUserInfo": {
+      "get": {
+        "summary": "根据ID查询sysUser",
+        "x-apifox-folder": "sysUser",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "sysUser"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "用户ID",
+            "required": false,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+
+        },
+        "x-run-in-apifox": "",
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/user/sysUser": {
+      "post": {
+        "summary": "添加sysUser",
+        "x-apifox-folder": "sysUser",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "sysUser"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "account": {
+					"type": "string",
+					"description": "用户名"
+				  },
+				  "nick_name": {
+					"type": "string",
+					"description": "姓名"
+				  },
+				  "password": {
+					"type": "string",
+					"description": "密码"
+				  },
+				  "state": {
+					"type": "integer",
+					"description": "状态 1:正常 2:停用 3:封禁"
+				  }
+                }
+              }
+            }
+          }
+        },
+         "responses": {
+
+         },
+        "x-run-in-apifox": "",
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "get": {
+        "summary": "分页查询sysUser",
+        "x-apifox-folder": "sysUser",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "sysUser"
+        ],
+        "parameters": [
+          {
+			"name": "current",
+			"in": "query",
+			"description": "页码",
+			"required": false,
+			"schema": {
+			  "type": "integer"
+			}
+		  },
+		  {
+			"name": "page_size",
+			"in": "query",
+			"description": "页数",
+			"required": false,
+			"schema": {
+			  "type": "integer"
+			}
+		  },
+		  {
+			"name": "account",
+			"in": "query",
+			"description": "用户名",
+			"required": false,
+			"schema": {
+			  "type": "string"
+			}
+		  },
+		  {
+			"name": "nick_name",
+			"in": "query",
+			"description": "姓名",
+			"required": false,
+			"schema": {
+			  "type": "string"
+			}
+		  },
+		  {
+			"name": "password",
+			"in": "query",
+			"description": "密码",
+			"required": false,
+			"schema": {
+			  "type": "string"
+			}
+		  },
+		  {
+			"name": "state",
+			"in": "query",
+			"description": "状态 1:正常 2:停用 3:封禁",
+			"required": false,
+			"schema": {
+			  "type": "integer"
+			}
+		  }
+        ],
+         "responses": {
+
+         },
+        "x-run-in-apifox": "",
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "put": {
+        "summary": "修改sysUser",
+        "x-apifox-folder": "sysUser",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "sysUser"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                   "id": {
+					"type": "string",
+					"description": "用户ID"
+				  },
+				  "account": {
+					"type": "string",
+					"description": "用户名"
+				  },
+				  "nick_name": {
+					"type": "string",
+					"description": "姓名"
+				  },
+				  "password": {
+					"type": "string",
+					"description": "密码"
+				  },
+				  "state": {
+					"type": "integer",
+					"description": "状态 1:正常 2:停用 3:封禁"
+				  }
+                },
+                "required": [
+                  "id"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+
+        },
+        "x-run-in-apifox": "",
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {}
+  }
+}

@@ -1,0 +1,13 @@
+Name: user-api
+Host: 0.0.0.0
+Port: 1001
+MaxBytes: 1048576000
+Timeout: 30000
+Mode: pro
+
+Log:
+  ServiceName: user.rpc
+  Level: error
+
+UserRpc:
+  Target: nacos://nacosApi:8848/user.rpc?namespaceid=public&timeout=5000s

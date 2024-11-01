@@ -1,0 +1,8 @@
+/deploy/golang/out/
+/deploy/app/out/
+/bin/*/*.exe
+/bin/*/*/*.exe
+/bin/*/*/*/*.exe
+/bin/*/*/*/*/*.exe
+/data/*
+.idea/*

@@ -1,0 +1,73 @@
+version: '3'
+
+######## app下api+rpc ,  启动本项目之前，要先启动本项目依赖的环境docker-compose-env.yml #######
+# 自动创建网络，并手动指定IP网段
+
+networks:
+  dabenxiong_net:
+    ipam:
+      config:
+        - subnet: 172.25.0.0/16
+
+services:
+  nginx-app:
+    image: nginx:1.21.5
+    container_name: nginx-app
+    restart: always
+    privileged: true
+    deploy:
+      resources:
+        limits:
+          memory: 4096M # 限制最大使用内存1024MB
+    ports:
+      - 9005:9005
+    volumes:
+      - ../deploy/nginx/app:/etc/nginx/conf.d
+      - ../deploy/nginx/hosts:/etc/hosts
+      - ../data/nginx/app/log:/var/log/nginx
+      - ../deploy/time/Shanghai:/etc/localtime
+      - ../deploy/time/Shanghai:/usr/share/zoneinfo/Asia/Shanghai
+    networks:
+      - dabenxiong_net
+
+
+  userApi:
+    image: alpine:3.16
+    container_name: userApi
+    working_dir: /go
+    volumes:
+      - ../deploy/app/user/api/etc:/go/etc
+      - ../deploy/app/hosts:/etc/hosts
+      - ../deploy/app/out/user/api/user-api:/go/user-api
+      - ../deploy/time/Shanghai:/etc/localtime
+      - ../deploy/time/Shanghai:/usr/share/zoneinfo/Asia/Shanghai
+    privileged: true
+    deploy:
+      resources:
+        limits:
+          memory: 2048M # 限制最大使用内存2048MB
+    restart: always
+    networks:
+      dabenxiong_net:
+        ipv4_address: 172.20.1.77
+    command: "./user-api -f ./etc/user-api.yaml"
+
+  userRpc:
+    image: alpine:3.16
+    container_name: userRpc
+    working_dir: /go
+    volumes:
+      - ../deploy/app/user/rpc/etc:/go/etc
+      - ../deploy/app/hosts:/etc/hosts
+      - ../deploy/app/out/user/rpc/user-rpc:/go/user-rpc
+      - ../deploy/time/Shanghai:/etc/localtime
+      - ../deploy/time/Shanghai:/usr/share/zoneinfo/Asia/Shanghai
+    privileged: true
+    deploy:
+      resources:
+        limits:
+          memory: 4096M # 限制最大使用内存4096MB
+    restart: always
+    networks:
+      - dabenxiong_net
+    command: "./user-rpc -f ./etc/user.yaml"

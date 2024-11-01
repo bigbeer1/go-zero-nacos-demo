@@ -1,0 +1,28 @@
+Name: user.rpc
+ListenOn: 0.0.0.0:1102
+Timeout: 30000
+
+Log:
+  ServiceName: tpmt.rpc
+  Level: info
+
+
+Mysql:
+  DataSource: root:PXDNA999999@tcp(127.0.0.1:33069)/test?charset=utf8mb4&parseTime=true&loc=Local
+
+
+CacheRedis:
+  - Host: "redis-1:6381"
+    Type: "cluster"
+    Pass: "G6200000000"
+
+
+NacosService:
+  Host: "127.0.0.1"
+  Port: 8848
+  NamespaceId: "public"
+  Timeout: 5000
+  NotLoadCacheAtStart: true
+  LogDir: "/tmp/nacos/log"
+  CacheDir: "/tmp/nacos/cache"
+  LogLevel: "debug"

@@ -1,0 +1,20 @@
+syntax = "v1"
+
+import "doc/sysuser.api"
+
+info (
+	title:   "type title here"
+	desc:    "type desc here"
+	author:  "type author here"
+	email:   "type email here"
+	version: "type version here"
+)
+
+type (
+	Response {
+		Code int         `json:"code"` // 业务码
+		Msg  string      `json:"msg"` // 业务信息
+		Data interface{} `json:"data"` // 数据
+	}
+)
+

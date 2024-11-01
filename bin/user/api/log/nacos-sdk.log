@@ -1,0 +1,19 @@
+2024-11-01T14:51:31.486+0800	ERROR	cache/disk_cache.go:54	read cacheDir:E:\Gopath\src\go-zero-demo\bin\user\api\cache\naming\public failed!err:open E:\Gopath\src\go-zero-demo\bin\user\api\cache\naming\public: The system cannot find the path specified.
+2024-11-01T14:51:31.488+0800	INFO	naming_http/push_receiver.go:89	udp server start, port: 55012
+2024-11-01T14:51:31.488+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] 8b6ed2c1-717a-4b6a-89c0-5e341c1ca33b try to connect to server on start up, server: {serverIp:127.0.0.1 serverPort:8848 serverGrpcPort:9848}
+2024-11-01T14:51:31.626+0800	INFO	util/common.go:96	Local IP:172.19.0.1
+2024-11-01T14:51:31.732+0800	INFO	rpc/rpc_client.go:234	8b6ed2c1-717a-4b6a-89c0-5e341c1ca33b success to connect to server {serverIp:127.0.0.1 serverPort:8848 serverGrpcPort:9848} on start up, connectionId=1730443891498_172.19.0.1_44186
+2024-11-01T14:51:31.732+0800	INFO	naming_grpc/naming_grpc_proxy.go:177	Subscribe Service namespaceId:<public>, serviceName:<user.rpc>, groupName:<DEFAULT_GROUP>, clusters:<>
+2024-11-01T14:51:31.765+0800	INFO	naming_cache/service_info_holder.go:96	service key:DEFAULT_GROUP@@user.rpc was updated to:{"cacheMillis":10000,"hosts":[{"instanceId":"","ip":"172.24.240.1","port":1102,"weight":1,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@user.rpc","metadata":{},"instanceHeartBeatInterval":5000,"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000}],"checksum":"","lastRefTime":1730443891753,"clusters":"","name":"user.rpc","groupName":"DEFAULT_GROUP","valid":true,"allIPs":false,"reachProtectionThreshold":false}
+2024-11-01T14:54:51.955+0800	INFO	cache/disk_cache.go:76	finish loading name cache, total: 1
+2024-11-01T14:54:51.956+0800	INFO	naming_http/push_receiver.go:89	udp server start, port: 55860
+2024-11-01T14:54:51.957+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] 1f251305-9640-46e7-a931-5685d4f85e9c try to connect to server on start up, server: {serverIp:127.0.0.1 serverPort:8848 serverGrpcPort:9848}
+2024-11-01T14:54:52.082+0800	INFO	util/common.go:96	Local IP:172.19.0.1
+2024-11-01T14:54:52.187+0800	INFO	rpc/rpc_client.go:234	1f251305-9640-46e7-a931-5685d4f85e9c success to connect to server {serverIp:127.0.0.1 serverPort:8848 serverGrpcPort:9848} on start up, connectionId=1730444091966_172.19.0.1_44882
+2024-11-01T14:54:52.187+0800	INFO	rpc/rpc_client.go:382	1f251305-9640-46e7-a931-5685d4f85e9c notify connected event to listeners , connectionId=1730444091966_172.19.0.1_44882
+2024-11-01T14:54:52.187+0800	INFO	naming_grpc/naming_grpc_proxy.go:177	Subscribe Service namespaceId:<public>, serviceName:<user.rpc>, groupName:<DEFAULT_GROUP>, clusters:<>
+2024-11-01T14:54:52.187+0800	INFO	naming_grpc/naming_grpc_proxy.go:177	Subscribe Service namespaceId:<public>, serviceName:<user.rpc>, groupName:<DEFAULT_GROUP>, clusters:<>
+2024-11-01T14:54:52.194+0800	WARN	naming_cache/service_info_holder.go:89	out of date data received, old-t: 1730444092192, new-t: 1730444092192
+2024-11-01T15:02:38.923+0800	INFO	cache/disk_cache.go:76	finish loading name cache, total: 1
+2024-11-01T15:02:38.924+0800	INFO	naming_http/push_receiver.go:89	udp server start, port: 55816
+2024-11-01T15:02:38.924+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] 0a14cbda-8b8d-4208-9f27-b02feab2b24b try to connect to server on start up, server: {serverIp:127.0.0.1 serverPort:8848 serverGrpcPort:9848}
